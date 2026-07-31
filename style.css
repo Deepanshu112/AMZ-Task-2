@@ -1913,3 +1913,95 @@
   .s3-card { max-width: 100%; border: none !important; padding: 0 !important; }
   .s3-img-wrap { padding: 5px; }
 }
+
+/* Section 4 Pixel Perfect Overrides */
+.s4 {
+  background-color: #F4F3EF !important;
+  padding: 80px 20px !important;
+  font-family: 'DM Sans', sans-serif;
+  border-top: none !important;
+}
+.s4-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+.s4-left {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.s4-avatar-large {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+.s4-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.s4-tag {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6B7280;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+}
+.s4-right {
+  flex: 1;
+}
+.s4-pullquote {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(32px, 4vw, 42px) !important;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0 0 30px 0 !important;
+  text-align: left;
+}
+.s4-pullquote .orange {
+  color: #ED8B16;
+}
+.s4-body {
+  display: block !important;
+}
+.s4-p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #6B7280;
+  margin: 0 0 12px 0 !important;
+  text-align: left;
+}
+.s4-p:last-child {
+  margin-bottom: 0 !important;
+}
+.s4-p .highlight {
+  color: #ED8B16;
+  background-color: #FFF6ED;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .s4 { padding: 60px 20px !important; }
+  .s4-inner { flex-direction: column; gap: 40px; align-items: center; }
+  .s4-left { flex: 0 0 auto; width: 100%; max-width: 400px; }
+  .s4-tags { flex-wrap: wrap; justify-content: center; }
+  .s4-pullquote { font-size: 32px !important; }
+}
+
+/* Section 5 Pixel Perfect Overrides */
+.s5 {
+  border-top: none !important;
+}
