@@ -10,6 +10,89 @@
       });
     })();
 
+  /* ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+       Section 5 Carousel
+     ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ */
+  (function () {
+    var carousel = document.getElementById('s5-carousel');
+    var prevBtn = document.getElementById('s5-prev');
+    var nextBtn = document.getElementById('s5-next');
+    var dots = document.querySelectorAll('.s5-dot');
+    if (!carousel) return;
+
+    var autoScrollInterval;
+    var isHovered = false;
+
+    // Functions to scroll manually
+    function scrollNext() {
+      var slide = carousel.querySelector('.s5-slide');
+      if (!slide) return;
+      var slideWidth = slide.offsetWidth + 20; // 20px gap
+      carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    }
+
+    function scrollPrev() {
+      var slide = carousel.querySelector('.s5-slide');
+      if (!slide) return;
+      var slideWidth = slide.offsetWidth + 20;
+      carousel.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', function() { scrollNext(); resetAutoScroll(); });
+    if (prevBtn) prevBtn.addEventListener('click', function() { scrollPrev(); resetAutoScroll(); });
+
+    // Update dots on scroll
+    carousel.addEventListener('scroll', function() {
+      var slide = carousel.querySelector('.s5-slide');
+      if (!slide) return;
+      var scrollPos = carousel.scrollLeft;
+      var slideWidth = slide.offsetWidth + 20;
+      var activeIndex = Math.round(scrollPos / slideWidth);
+      
+      dots.forEach(function(dot, i) {
+        if (i === activeIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    });
+
+    // Auto scroll logic
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(function() {
+        if (isHovered) return;
+        var slide = carousel.querySelector('.s5-slide');
+        if (!slide) return;
+        var maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        if (carousel.scrollLeft >= maxScroll - 10) { // If at the end, jump to start
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollNext();
+        }
+      }, 3500); // 3.5 seconds
+    }
+
+    function resetAutoScroll() {
+      clearInterval(autoScrollInterval);
+      startAutoScroll();
+    }
+
+    // Pause on hover
+    var carouselContainer = document.querySelector('.s5-carousel-container');
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', function() { isHovered = true; });
+      carouselContainer.addEventListener('mouseleave', function() { isHovered = false; });
+      carouselContainer.addEventListener('touchstart', function() { isHovered = true; });
+      carouselContainer.addEventListener('touchend', function() { 
+        setTimeout(function() { isHovered = false; }, 2000); 
+      });
+    }
+
+    startAutoScroll();
+  })();
+
     /* ── Header scroll ── */
     (function () {
       var header = document.getElementById('site-header');

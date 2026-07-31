@@ -257,101 +257,43 @@
        SECTION 5 — 2×2 DATA CARDS
        Source: section-05-layout-explorations.html · Variant A
   ══════════════════════════════════════════════════════════ -->
-  <section class="s5">
+  <section class="s5" id="s5-carousel-section">
     <div class="s5-inner">
 
       <div class="s5-intro">
-        <h2 class="s5-header">What Changes When The System Works</h2>
-        <p class="s5-sub">These are accounts we audited, fixed, and handed back to sellers who now know exactly what
-          their account is doing every week.</p>
+        <h2 class="s5-header">WHAT CHANGES WHEN THE<br><span class="orange">SYSTEM WORKS</span></h2>
+        <p class="s5-sub">These are accounts we audited, fixed, and handed back to sellers who now know exactly what their account is doing every week.</p>
       </div>
 
-      <!-- featured result -->
-      <div class="s5-featured">
-        <div class="s5-prod-img s5-feat-img">
-          <div class="s5-prod-img-grid"></div>
-          <span class="s5-prod-img-label">Product photo</span>
+      <div class="s5-carousel-container">
+        <div class="s5-carousel" id="s5-carousel">
+          <div class="s5-slide"><img src="images/Testimonials/1.png" alt="Testimonial 1"></div>
+          <div class="s5-slide"><img src="images/Testimonials/2.png" alt="Testimonial 2"></div>
+          <div class="s5-slide"><img src="images/Testimonials/3.png" alt="Testimonial 3"></div>
+          <!-- Duplicated for scrolling -->
+          <div class="s5-slide"><img src="images/Testimonials/1.png" alt="Testimonial 4"></div>
+          <div class="s5-slide"><img src="images/Testimonials/2.png" alt="Testimonial 5"></div>
+          <div class="s5-slide"><img src="images/Testimonials/3.png" alt="Testimonial 6"></div>
         </div>
-        <div class="s5-feat-content">
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <span class="s5-feat-client">[Client Name]</span>
-            <span class="s5-tag">Home &amp; Kitchen</span>
+        
+        <div class="s5-nav">
+          <div class="s5-dots" id="s5-dots">
+            <span class="s5-dot active" data-index="0"></span>
+            <span class="s5-dot" data-index="1"></span>
+            <span class="s5-dot" data-index="2"></span>
+            <span class="s5-dot" data-index="3"></span>
           </div>
-          <p class="s5-feat-narrative">Ad costs were at 34% of revenue. The previous agency said the category was just
-            competitive. It was not — the listings were not converting the traffic the ads were buying. We rebuilt the
-            system. Sixty-seven days later ad costs were at 11%, the product was on page one, and revenue was up 64% on
-            the same spend. The seller's words: "I did not realise how much I had accepted as normal until I saw what
-            normal was supposed to look like."</p>
-          <div class="s5-feat-stats">
-            <span class="s5-chip">ACoS 34% → 11%</span>
-            <span class="s5-chip">Revenue +64%</span>
-            <span class="s5-chip">67 days</span>
+          
+          <div class="s5-buttons">
+            <button class="s5-btn s5-btn-prev" id="s5-prev" aria-label="Previous">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="s5-btn s5-btn-next" id="s5-next" aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
           </div>
         </div>
       </div>
-
-      <!-- three compact results -->
-      <div class="s5-trio">
-
-        <div class="s5-mini">
-          <div class="s5-prod-img s5-mini-img">
-            <div class="s5-prod-img-grid"></div>
-            <span class="s5-prod-img-label">Product photo</span>
-          </div>
-          <div class="s5-mini-body">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <span class="s5-mini-client">[Client Name]</span>
-              <span class="s5-tag">Sports &amp; Outdoors</span>
-            </div>
-            <p class="s5-mini-narrative">Listing down Monday morning. Caught same day, restored by Thursday. Position
-              recovered in 8 days — the seller found out when we told them it was already fixed.</p>
-            <div class="s5-mini-stats">
-              <span class="s5-chip">Same-day catch</span>
-              <span class="s5-chip">8 days</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="s5-mini">
-          <div class="s5-prod-img s5-mini-img">
-            <div class="s5-prod-img-grid"></div>
-            <span class="s5-prod-img-label">Product photo</span>
-          </div>
-          <div class="s5-mini-body">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <span class="s5-mini-client">[Client Name]</span>
-              <span class="s5-tag">Beauty &amp; Personal Care</span>
-            </div>
-            <p class="s5-mini-narrative">Three products flat for six months. Recovery process across all three — within
-              90 days two reached page one organically. Ad spend on those two dropped 40%.</p>
-            <div class="s5-mini-stats">
-              <span class="s5-chip">Ad spend -40%</span>
-              <span class="s5-chip">90 days</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="s5-mini">
-          <div class="s5-prod-img s5-mini-img">
-            <div class="s5-prod-img-grid"></div>
-            <span class="s5-prod-img-label">Product photo</span>
-          </div>
-          <div class="s5-mini-body">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <span class="s5-mini-client">[Client Name]</span>
-              <span class="s5-tag">Tools &amp; Hardware</span>
-            </div>
-            <p class="s5-mini-narrative">Two agencies, 18 months, ACoS went up. First audit found four untouched
-              problems. ACoS from 28% to 16% in 60 days.</p>
-            <div class="s5-mini-stats">
-              <span class="s5-chip">ACoS 28% → 16%</span>
-              <span class="s5-chip">60 days</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
 
     </div>
   </section>
