@@ -1690,3 +1690,138 @@
   gap: 8px;
 }
 .s1-sep { display: none !important; }
+
+/* Section 2 Overrides */
+.s2 {
+  background-color: #FFFFFF;
+  padding: 80px 20px 60px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+.s2-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.s2-amazon-logo {
+  height: 28px;
+  margin-bottom: 24px;
+}
+.s2-lead {
+  color: #6B7280;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.s2-lead .ph, .s2-trail .ph {
+  color: #374151;
+  font-weight: 700;
+}
+.s2-number-wrap {
+  margin-bottom: 4px;
+}
+.s2-number {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(80px, 12vw, 130px);
+  color: #ED8B16;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.s2-trail {
+  color: #6B7280;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.s2-support-wrap {
+  background-color: #FFF6ED;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin-bottom: 80px;
+}
+.s2-support {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+}
+.s2-logos-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+.s2-logos-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+.s2-logos-track img {
+  max-height: 90px;
+  max-width: 190px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+.mobile-dup {
+  display: none;
+}
+.s2-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+.s2-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #D1D5DB;
+}
+.s2-dots span.active {
+  background-color: #111827;
+}
+
+@media (max-width: 768px) {
+  .s2 { padding: 60px 20px 40px; }
+  .s2-amazon-logo { height: 24px; }
+  .s2-lead { font-size: 16px; margin-bottom: 4px; }
+  .s2-number { font-size: 80px; }
+  .s2-support-wrap { margin-bottom: 50px; padding: 12px 20px; }
+  .s2-support { font-size: 14px; }
+  
+  .mobile-dup {
+    display: block;
+  }
+  .s2-logos-marquee {
+    width: 100vw;
+    margin-left: -20px;
+    padding-right: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s2-logos-track {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    width: max-content;
+    animation: scrollLogos 15s linear infinite;
+  }
+  .s2-logos-track img {
+    max-height: 65px;
+    max-width: 150px;
+    margin: 0;
+  }
+  .s2-dots {
+    display: none;
+  }
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 20px)); }
+}
